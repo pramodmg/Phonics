@@ -21,37 +21,37 @@ An engaging, accessible, and comprehensive alphabet learning application built w
 
 ### 🏠 **Main Learning Interface**
 <div align="center">
-  <img src="docs/screenshots/Screenshot 2025-07-02 at 9.27.12 PM.png" alt="Interactive Alphabet Learning Board" width="800">
+  <img src="docs/screenshots/main-interface.png" alt="Interactive Alphabet Learning Board" width="800">
   <p><em>Interactive alphabet grid with 26 clickable letters, each featuring bounce animations and visual feedback for engaging learning</em></p>
 </div>
 
 ### 🎯 **Letter Exploration Popup**
 <div align="center">
-  <img src="docs/screenshots/Screenshot 2025-07-02 at 9.27.21 PM.png" alt="Letter Detail Popup" width="800">
+  <img src="docs/screenshots/letter-popup.png" alt="Letter Detail Popup" width="800">
   <p><em>Comprehensive letter details with phonics pronunciation, writing tips, fun facts, and interactive word examples with visited word tracking</em></p>
 </div>
 
 ### 🏆 **Achievement System & Progress**
 <div align="center">
-  <img src="docs/screenshots/Screenshot 2025-07-02 at 9.27.31 PM.png" alt="Achievement Badges and Progress" width="600">
+  <img src="docs/screenshots/achievements.png" alt="Achievement Badges and Progress" width="600">
   <p><em>Gamified learning system with progressive achievements, milestone celebrations, and real-time progress tracking</em></p>
 </div>
 
 ### 📱 **Mobile Responsive Design**
 <div align="center">
-  <img src="docs/screenshots/Screenshot 2025-07-02 at 9.27.39 PM.png" alt="Mobile Interface" width="400">
+  <img src="docs/screenshots/mobile-design.png" alt="Mobile Interface" width="400">
   <p><em>Optimized mobile experience with touch-friendly interactions, adaptive layout, and seamless responsiveness across devices</em></p>
 </div>
 
 ### 🎤 **Audio & Speech Features**
 <div align="center">
-  <img src="docs/screenshots/Screenshot 2025-07-02 at 9.28.04 PM.png" alt="Audio Pronunciation Features" width="600">
+  <img src="docs/screenshots/audio-features.png" alt="Audio Pronunciation Features" width="600">
   <p><em>Professional phonics pronunciation with Web Speech API integration, visual feedback, and kid-friendly voice selection</em></p>
 </div>
 
 ### ♿ **Enhanced User Experience**
 <div align="center">
-  <img src="docs/screenshots/Screenshot 2025-07-02 at 9.28.22 PM.png" alt="Enhanced User Experience" width="600">
+  <img src="docs/screenshots/user-experience.png" alt="Enhanced User Experience" width="600">
   <p><em>Full keyboard navigation, screen reader support, high contrast compatibility, and accessible design features for inclusive learning</em></p>
 </div>
 
