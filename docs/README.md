@@ -22,6 +22,15 @@ Welcome to the documentation directory for the Phonics Learning App! This folder
 - **Testing checklists** for quality assurance
 - **Pro tips** for successful implementation
 
+### 📸 **[Screenshot Guide](./SCREENSHOT_GUIDE.md)**
+*Professional screenshot capture instructions*
+
+- **7 Key screenshots** to showcase all app features
+- **Technical setup** and optimal capture settings
+- **Quality guidelines** for professional presentation
+- **Step-by-step instructions** for each screenshot type
+- **Post-capture optimization** and organization tips
+
 ## 🚀 **Quick Navigation**
 
 ### **For Developers**

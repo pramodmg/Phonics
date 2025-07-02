@@ -17,6 +17,46 @@ An engaging, accessible, and comprehensive alphabet learning application built w
 
 *Start with the Enhancement Roadmap to see what's planned for the next version!*
 
+## 📸 **Live Screenshots & Demonstrations**
+
+### 🏠 **Main Learning Interface**
+<div align="center">
+  <img src="docs/screenshots/Screenshot 2025-07-02 at 9.27.12 PM.png" alt="Interactive Alphabet Learning Board" width="800">
+  <p><em>Interactive alphabet grid with 26 clickable letters, each featuring bounce animations and visual feedback for engaging learning</em></p>
+</div>
+
+### 🎯 **Letter Exploration Popup**
+<div align="center">
+  <img src="docs/screenshots/Screenshot 2025-07-02 at 9.27.21 PM.png" alt="Letter Detail Popup" width="800">
+  <p><em>Comprehensive letter details with phonics pronunciation, writing tips, fun facts, and interactive word examples with visited word tracking</em></p>
+</div>
+
+### 🏆 **Achievement System & Progress**
+<div align="center">
+  <img src="docs/screenshots/Screenshot 2025-07-02 at 9.27.31 PM.png" alt="Achievement Badges and Progress" width="600">
+  <p><em>Gamified learning system with progressive achievements, milestone celebrations, and real-time progress tracking</em></p>
+</div>
+
+### 📱 **Mobile Responsive Design**
+<div align="center">
+  <img src="docs/screenshots/Screenshot 2025-07-02 at 9.27.39 PM.png" alt="Mobile Interface" width="400">
+  <p><em>Optimized mobile experience with touch-friendly interactions, adaptive layout, and seamless responsiveness across devices</em></p>
+</div>
+
+### 🎤 **Audio & Speech Features**
+<div align="center">
+  <img src="docs/screenshots/Screenshot 2025-07-02 at 9.28.04 PM.png" alt="Audio Pronunciation Features" width="600">
+  <p><em>Professional phonics pronunciation with Web Speech API integration, visual feedback, and kid-friendly voice selection</em></p>
+</div>
+
+### ♿ **Enhanced User Experience**
+<div align="center">
+  <img src="docs/screenshots/Screenshot 2025-07-02 at 9.28.22 PM.png" alt="Enhanced User Experience" width="600">
+  <p><em>Full keyboard navigation, screen reader support, high contrast compatibility, and accessible design features for inclusive learning</em></p>
+</div>
+
+---
+
 ## ✨ Features
 
 ### 🎮 Interactive Learning Experience
@@ -480,6 +520,29 @@ Edit `src/constants/alphabet.js` to modify:
 - **Progress Bar Extensions**: Additional animation types and themes
 - **Component Library**: Extract reusable components as separate package
 - **Advanced Timer Features**: Countdown, stopwatch, and interval modes
+
+## 📸 **Updating Screenshots**
+
+To update the visual documentation with fresh screenshots:
+
+1. **Follow the Guide**: Use the comprehensive [Screenshot Guide](./docs/SCREENSHOT_GUIDE.md)
+2. **Run the App**: Start with `npm run dev` or `pnpm dev`
+3. **Capture 7 Key Views**: Main interface, letter popup, achievements, mobile view, audio features, accessibility, and progress stats
+4. **Save to Folder**: Place all screenshots in `docs/screenshots/` directory
+5. **Verify Display**: Check that all images display correctly in the README
+
+**Quick Capture Checklist**:
+- [ ] `main-interface.png` - Full alphabet grid with click counters
+- [ ] `letter-popup.png` - Complete letter details popup
+- [ ] `achievements.png` - Achievement badges and progress
+- [ ] `mobile-view.png` - Responsive mobile layout
+- [ ] `audio-features.png` - Phonics and audio interfaces
+- [ ] `accessibility.png` - Keyboard navigation and focus states
+- [ ] `progress-stats.png` - Learning analytics and statistics
+
+*Need help? Check the [Screenshot Guide](./docs/SCREENSHOT_GUIDE.md) for detailed instructions and technical tips!*
+
+---
 
 ## 📄 License
 
