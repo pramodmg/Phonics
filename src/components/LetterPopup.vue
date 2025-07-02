@@ -285,14 +285,8 @@ onUnmounted(() => {
     @keydown="handleKeydown"
     tabindex="0"
   >
-    <div class="popup-content" role="dialog" aria-labelledby="popup-title">
-      <!-- Close button -->
-      <button class="close-button" @click="closePopup" aria-label="Close popup">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <span class="close-text">Close</span>
-      </button>
+    <div class="popup-container">
+      <div class="popup-content" role="dialog" aria-labelledby="popup-title">
 
       <!-- Hero Header -->
       <div class="hero-header">
@@ -429,6 +423,14 @@ onUnmounted(() => {
           </div>
         </div>
       </Transition>
+      </div>
+      
+      <!-- Close Button -->
+      <button class="floating-close-btn" @click="closePopup" aria-label="Close popup">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
     </div>
   </div>
 </template>
@@ -450,14 +452,23 @@ onUnmounted(() => {
   padding: 1.5rem 1rem;
 }
 
+/* Popup container */
+.popup-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  max-width: 95vw;
+  width: 100%;
+  max-width: 1150px;
+  position: relative;
+}
+
 /* Popup content */
 .popup-content {
   background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
   border-radius: 20px;
   padding: 0;
-  max-width: 95vw;
-  width: 100%;
-  max-width: 1100px;
+  flex: 1;
   height: auto;
   max-height: 90vh;
   overflow: hidden;
@@ -481,41 +492,55 @@ onUnmounted(() => {
   }
 }
 
-/* Close button */
-.close-button {
+/* Floating Close Button - Themed */
+.floating-close-btn {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: linear-gradient(135deg, #ef4444, #dc2626);
-  border: none;
+  top: -15px;
+  right: -15px;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 50%;
+  color: white !important;
   cursor: pointer;
-  color: white;
-  padding: 0.5rem 0.75rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  border-radius: 25px;
-  transition: all 0.3s ease;
-  z-index: 10;
-  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
-  font-weight: 600;
-  font-size: 0.9rem;
+  justify-content: center;
+  z-index: 1002;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 
+    0 8px 25px rgba(102, 126, 234, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.1) !important;
+  flex-shrink: 0;
+  backdrop-filter: blur(10px);
 }
 
-.close-button:hover {
-  background: linear-gradient(135deg, #dc2626, #b91c1c);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+.floating-close-btn:hover {
+  background: linear-gradient(135deg, #5a67d8 0%, #667eea 100%) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  transform: scale(1.1) rotate(5deg) !important;
+  box-shadow: 
+    0 12px 35px rgba(90, 103, 216, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.2) !important;
 }
 
-.close-button:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+.floating-close-btn:active {
+  background: linear-gradient(135deg, #4c51bf 0%, #5a67d8 100%) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  transform: scale(0.95) rotate(-2deg) !important;
+  box-shadow: 
+    0 4px 15px rgba(76, 81, 191, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.3) !important;
 }
 
-.close-text {
-  font-size: 0.85rem;
-  font-weight: 600;
+.floating-close-btn svg {
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+.floating-close-btn:hover svg {
+  transform: rotate(90deg) scale(1.1);
 }
 
 /* Hero Header */
@@ -936,15 +961,26 @@ onUnmounted(() => {
     max-height: 90vh;
   }
 
-  .close-button {
-    top: 0.75rem;
-    right: 0.75rem;
-    padding: 0.4rem 0.6rem;
-    font-size: 0.8rem;
+  .popup-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .floating-close-btn {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 36px;
+    height: 36px;
+    order: -1;
+    margin-bottom: 0.5rem;
+    border-width: 1.5px;
   }
 
-  .close-text {
-    font-size: 0.75rem;
+  .floating-close-btn svg {
+    width: 18px;
+    height: 18px;
   }
 
   .hero-header {

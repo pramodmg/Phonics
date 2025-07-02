@@ -7,6 +7,16 @@ An engaging, accessible, and comprehensive alphabet learning application built w
 ![Vitest](https://img.shields.io/badge/Vitest-2.1.9-6E9F18?style=flat&logo=vitest&logoColor=white)
 ![Test Coverage](https://img.shields.io/badge/Coverage-95%25-brightgreen?style=flat)
 
+## 📚 **Documentation & Enhancement Roadmap**
+
+📋 **Planning & Development Docs**: For detailed enhancement plans and implementation guides, see our comprehensive documentation in the [`docs/`](./docs/) folder:
+
+- **[🎯 Enhancement Roadmap](./docs/ENHANCEMENT_ROADMAP.md)** - 18 feature ideas with 7-day implementation plan
+- **[📅 Implementation Tracker](./docs/IMPLEMENTATION_TRACKER.md)** - Daily progress tracking and task management
+- **[📚 Documentation Overview](./docs/README.md)** - Complete guide to all available documentation
+
+*Start with the Enhancement Roadmap to see what's planned for the next version!*
+
 ## ✨ Features
 
 ### 🎮 Interactive Learning Experience
@@ -325,7 +335,7 @@ pnpm test --watch
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd interactive-learning-alphabest
+cd interactive-learning-alphabets
 
 # Install dependencies
 pnpm install
