@@ -7,6 +7,58 @@ An engaging, accessible, and comprehensive alphabet learning application built w
 ![Vitest](https://img.shields.io/badge/Vitest-2.1.9-6E9F18?style=flat&logo=vitest&logoColor=white)
 ![Test Coverage](https://img.shields.io/badge/Coverage-95%25-brightgreen?style=flat)
 
+## 📚 **Documentation & Enhancement Roadmap**
+
+📋 **Planning & Development Docs**: For detailed enhancement plans and implementation guides, see our comprehensive documentation in the [`docs/`](./docs/) folder:
+
+- **[🎯 Enhancement Roadmap](./docs/ENHANCEMENT_ROADMAP.md)** - 18 feature ideas with 7-day implementation plan
+- **[📅 Implementation Tracker](./docs/IMPLEMENTATION_TRACKER.md)** - Daily progress tracking and task management
+- **[📚 Documentation Overview](./docs/README.md)** - Complete guide to all available documentation
+
+*Start with the Enhancement Roadmap to see what's planned for the next version!*
+
+## 📸 **Live Screenshots & Demonstrations**
+
+### 🏠 **Main Learning Interface**
+<div align="center">
+  <img src="docs/screenshots/main-interface.png" alt="Interactive Alphabet Learning Board" width="800">
+  <p><em>Interactive alphabet grid with 26 clickable letters, each featuring bounce animations and visual feedback for engaging learning</em></p>
+</div>
+
+### 🔍 **Individual Letter Highlighting**
+<div align="center">
+  <img src="docs/screenshots/each-letter-highlight.png" alt="Letter Highlighting Feature" width="800">
+  <p><em>Dynamic letter highlighting system with visual feedback when users hover and interact with individual alphabet letters</em></p>
+</div>
+
+### 🎯 **Letter Exploration Popup**
+<div align="center">
+  <img src="docs/screenshots/letter-popup.png" alt="Letter Detail Popup" width="800">
+  <p><em>Comprehensive letter details with phonics pronunciation, writing tips, fun facts, and interactive word examples with visited word tracking</em></p>
+</div>
+
+### ✨ **Enhanced Letter Popover**
+<div align="center">
+  <img src="docs/screenshots/letter-popover-enhanced.png" alt="Enhanced Letter Popover" width="800">
+  <p><em>Advanced popover interface with rich educational content, interactive elements, and modern design for immersive learning experience</em></p>
+</div>
+
+### 🎉 **Congratulations & Achievements**
+<div align="center">
+  <img src="docs/screenshots/congradulations.png" alt="Achievement Celebration" width="600">
+  <p><em>Celebratory achievement system with confetti animations, progress milestones, and rewarding feedback for completed learning goals</em></p>
+</div>
+
+
+
+### ♿ **Enhanced User Experience**
+<div align="center">
+  <img src="docs/screenshots/user-experience.png" alt="Enhanced User Experience" width="600">
+  <p><em>Comprehensive user experience features including accessibility support, responsive design, and intuitive navigation for all learners</em></p>
+</div>
+
+---
+
 ## ✨ Features
 
 ### 🎮 Interactive Learning Experience
@@ -325,7 +377,7 @@ pnpm test --watch
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd interactive-learning-alphabest
+cd interactive-learning-alphabets
 
 # Install dependencies
 pnpm install
@@ -470,6 +522,29 @@ Edit `src/constants/alphabet.js` to modify:
 - **Progress Bar Extensions**: Additional animation types and themes
 - **Component Library**: Extract reusable components as separate package
 - **Advanced Timer Features**: Countdown, stopwatch, and interval modes
+
+## 📸 **Updating Screenshots**
+
+To update the visual documentation with fresh screenshots:
+
+1. **Follow the Guide**: Use the comprehensive [Screenshot Guide](./docs/SCREENSHOT_GUIDE.md)
+2. **Run the App**: Start with `npm run dev` or `pnpm dev`
+3. **Capture 7 Key Views**: Main interface, letter popup, achievements, mobile view, audio features, accessibility, and progress stats
+4. **Save to Folder**: Place all screenshots in `docs/screenshots/` directory
+5. **Verify Display**: Check that all images display correctly in the README
+
+**Quick Capture Checklist**:
+- [ ] `main-interface.png` - Full alphabet grid with click counters
+- [ ] `letter-popup.png` - Complete letter details popup
+- [ ] `achievements.png` - Achievement badges and progress
+- [ ] `mobile-view.png` - Responsive mobile layout
+- [ ] `audio-features.png` - Phonics and audio interfaces
+- [ ] `accessibility.png` - Keyboard navigation and focus states
+- [ ] `progress-stats.png` - Learning analytics and statistics
+
+*Need help? Check the [Screenshot Guide](./docs/SCREENSHOT_GUIDE.md) for detailed instructions and technical tips!*
+
+---
 
 ## 📄 License
 

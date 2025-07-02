@@ -120,6 +120,22 @@ const onClosePopup = () => {
   showPopup.value = false
 }
 
+/**
+ * Handle word clicked in popup
+ */
+const onWordClicked = (word) => {
+  if (!visitedWords.value.includes(word)) {
+    visitedWords.value.push(word)
+    
+    // Save to localStorage for persistence
+    try {
+      localStorage.setItem('phonics-visited-words', JSON.stringify(visitedWords.value))
+    } catch (error) {
+      console.warn('Could not save visited words to localStorage:', error)
+    }
+  }
+}
+
 // Speech is now managed directly in this component
 // No need for child component speech event handlers
 
@@ -129,11 +145,22 @@ const onClosePopup = () => {
 const onResetProgress = () => {
   if (confirm('Are you sure you want to reset all your progress?')) {
     resetProgress()
+    
+    // Clear visited words
+    visitedWords.value = []
+    try {
+      localStorage.removeItem('phonics-visited-words')
+    } catch (error) {
+      console.warn('Could not clear visited words from localStorage:', error)
+    }
   }
 }
 
 // Single help state
 const showHelp = ref(false)
+
+// Visited words tracking
+const visitedWords = ref([])
 
 /**
  * Toggle help visibility
@@ -651,6 +678,16 @@ const handleBeforeUnload = (event) => {
 onMounted(() => {
   document.addEventListener('keydown', handleKeyDown)
   window.addEventListener('beforeunload', handleBeforeUnload)
+  
+  // Load visited words from localStorage
+  try {
+    const savedVisitedWords = localStorage.getItem('phonics-visited-words')
+    if (savedVisitedWords) {
+      visitedWords.value = JSON.parse(savedVisitedWords)
+    }
+  } catch (error) {
+    console.warn('Could not load visited words from localStorage:', error)
+  }
 })
 
 /**
@@ -809,7 +846,9 @@ onUnmounted(() => {
       :letter-info="popupData.letterInfo"
       :example="popupData.example"
       :phonetic-sound="popupData.phoneticSound"
+      :visited-words="visitedWords"
       @close="onClosePopup"
+      @word-clicked="onWordClicked"
     />
 
     <!-- Confetti Celebration -->
