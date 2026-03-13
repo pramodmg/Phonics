@@ -5,7 +5,7 @@ import AlphabetLetter from './AlphabetLetter.vue'
 import LetterPopup from './LetterPopup.vue'
 import ConfettiCelebration from './ConfettiCelebration.vue'
 import { achievementService } from '../services/achievementService.js'
-import { PROGRESS_MESSAGES, A11Y_CONFIG } from '../constants/alphabet.js'
+import { PROGRESS_MESSAGES, A11Y_CONFIG, LETTER_DATA, PHONETIC_SOUNDS } from '../constants/alphabet.js'
 
 // Use the alphabet learning composable
 const {
@@ -283,246 +283,9 @@ const showReloadPrevention = () => {
  * Get letter data for a given letter
  */
 const getLetterData = (letter) => {
-  const letterData = {
-    'A': { 
-      name: 'Letter A', 
-      examples: [
-        { word: 'Apple', emoji: '🍎' },
-        { word: 'Ant', emoji: '🐜' },
-        { word: 'Airplane', emoji: '✈️' },
-        { word: 'Arrow', emoji: '➡️' }
-      ]
-    },
-    'B': { 
-      name: 'Letter B', 
-      examples: [
-        { word: 'Ball', emoji: '⚽' },
-        { word: 'Book', emoji: '📚' },
-        { word: 'Butterfly', emoji: '🦋' },
-        { word: 'Bear', emoji: '🐻' }
-      ]
-    },
-    'C': { 
-      name: 'Letter C', 
-      examples: [
-        { word: 'Cat', emoji: '🐱' },
-        { word: 'Car', emoji: '🚗' },
-        { word: 'Cake', emoji: '🎂' },
-        { word: 'Cloud', emoji: '☁️' }
-      ]
-    },
-    'D': { 
-      name: 'Letter D', 
-      examples: [
-        { word: 'Dog', emoji: '🐶' },
-        { word: 'Duck', emoji: '🦆' },
-        { word: 'Dragon', emoji: '🐉' },
-        { word: 'Diamond', emoji: '💎' }
-      ]
-    },
-    'E': { 
-      name: 'Letter E', 
-      examples: [
-        { word: 'Elephant', emoji: '🐘' },
-        { word: 'Egg', emoji: '🥚' },
-        { word: 'Earth', emoji: '🌍' },
-        { word: 'Eagle', emoji: '🦅' }
-      ]
-    },
-    'F': { 
-      name: 'Letter F', 
-      examples: [
-        { word: 'Fish', emoji: '🐠' },
-        { word: 'Fire', emoji: '🔥' },
-        { word: 'Flower', emoji: '🌸' },
-        { word: 'Frog', emoji: '🐸' }
-      ]
-    },
-    'G': { 
-      name: 'Letter G', 
-      examples: [
-        { word: 'Giraffe', emoji: '🦒' },
-        { word: 'Gift', emoji: '🎁' },
-        { word: 'Guitar', emoji: '🎸' },
-        { word: 'Grapes', emoji: '🍇' }
-      ]
-    },
-    'H': { 
-      name: 'Letter H', 
-      examples: [
-        { word: 'House', emoji: '🏠' },
-        { word: 'Hat', emoji: '👒' },
-        { word: 'Heart', emoji: '❤️' },
-        { word: 'Horse', emoji: '🐴' }
-      ]
-    },
-    'I': { 
-      name: 'Letter I', 
-      examples: [
-        { word: 'Ice cream', emoji: '🍦' },
-        { word: 'Island', emoji: '🏝️' },
-        { word: 'Igloo', emoji: '🏔️' },
-        { word: 'Insect', emoji: '🐛' }
-      ]
-    },
-    'J': { 
-      name: 'Letter J', 
-      examples: [
-        { word: 'Juice', emoji: '🧃' },
-        { word: 'Jellyfish', emoji: '🎐' },
-        { word: 'Jar', emoji: '🏺' },
-        { word: 'Jacket', emoji: '🧥' }
-      ]
-    },
-    'K': { 
-      name: 'Letter K', 
-      examples: [
-        { word: 'Key', emoji: '🔑' },
-        { word: 'Kite', emoji: '🪁' },
-        { word: 'King', emoji: '👑' },
-        { word: 'Kangaroo', emoji: '🦘' }
-      ]
-    },
-    'L': { 
-      name: 'Letter L', 
-      examples: [
-        { word: 'Lion', emoji: '🦁' },
-        { word: 'Leaf', emoji: '🍃' },
-        { word: 'Light', emoji: '💡' },
-        { word: 'Lemon', emoji: '🍋' }
-      ]
-    },
-    'M': { 
-      name: 'Letter M', 
-      examples: [
-        { word: 'Mouse', emoji: '🐭' },
-        { word: 'Moon', emoji: '🌙' },
-        { word: 'Music', emoji: '🎵' },
-        { word: 'Mountain', emoji: '⛰️' }
-      ]
-    },
-    'N': { 
-      name: 'Letter N', 
-      examples: [
-        { word: 'Nest', emoji: '🪹' },
-        { word: 'Night', emoji: '🌃' },
-        { word: 'Nose', emoji: '👃' },
-        { word: 'Nut', emoji: '🥜' }
-      ]
-    },
-    'O': { 
-      name: 'Letter O', 
-      examples: [
-        { word: 'Orange', emoji: '🍊' },
-        { word: 'Ocean', emoji: '🌊' },
-        { word: 'Owl', emoji: '🦉' },
-        { word: 'Octopus', emoji: '🐙' }
-      ]
-    },
-    'P': { 
-      name: 'Letter P', 
-      examples: [
-        { word: 'Pizza', emoji: '🍕' },
-        { word: 'Penguin', emoji: '🐧' },
-        { word: 'Planet', emoji: '🪐' },
-        { word: 'Pineapple', emoji: '🍍' }
-      ]
-    },
-    'Q': { 
-      name: 'Letter Q', 
-      examples: [
-        { word: 'Queen', emoji: '👸' },
-        { word: 'Question', emoji: '❓' },
-        { word: 'Quilt', emoji: '🛏️' },
-        { word: 'Quiet', emoji: '🤫' }
-      ]
-    },
-    'R': { 
-      name: 'Letter R', 
-      examples: [
-        { word: 'Robot', emoji: '🤖' },
-        { word: 'Rainbow', emoji: '🌈' },
-        { word: 'Rocket', emoji: '🚀' },
-        { word: 'Rose', emoji: '🌹' }
-      ]
-    },
-    'S': { 
-      name: 'Letter S', 
-      examples: [
-        { word: 'Sun', emoji: '☀️' },
-        { word: 'Star', emoji: '⭐' },
-        { word: 'Snake', emoji: '🐍' },
-        { word: 'Ship', emoji: '🚢' }
-      ]
-    },
-    'T': { 
-      name: 'Letter T', 
-      examples: [
-        { word: 'Tree', emoji: '🌳' },
-        { word: 'Tiger', emoji: '🐅' },
-        { word: 'Train', emoji: '🚂' },
-        { word: 'Turtle', emoji: '🐢' }
-      ]
-    },
-    'U': { 
-      name: 'Letter U', 
-      examples: [
-        { word: 'Umbrella', emoji: '☂️' },
-        { word: 'Unicorn', emoji: '🦄' },
-        { word: 'Up', emoji: '⬆️' },
-        { word: 'Universe', emoji: '🌌' }
-      ]
-    },
-    'V': { 
-      name: 'Letter V', 
-      examples: [
-        { word: 'Volcano', emoji: '🌋' },
-        { word: 'Violin', emoji: '🎻' },
-        { word: 'Van', emoji: '🚐' },
-        { word: 'Victory', emoji: '✌️' }
-      ]
-    },
-    'W': { 
-      name: 'Letter W', 
-      examples: [
-        { word: 'Water', emoji: '💧' },
-        { word: 'Whale', emoji: '🐋' },
-        { word: 'Wind', emoji: '💨' },
-        { word: 'Wolf', emoji: '🐺' }
-      ]
-    },
-    'X': { 
-      name: 'Letter X', 
-      examples: [
-        { word: 'X-ray', emoji: '🩻' },
-        { word: 'Xylophone', emoji: '🎹' },
-        { word: 'Box', emoji: '📦' },
-        { word: 'Fox', emoji: '🦊' }
-      ]
-    },
-    'Y': { 
-      name: 'Letter Y', 
-      examples: [
-        { word: 'Yellow', emoji: '💛' },
-        { word: 'Yo-yo', emoji: '🪀' },
-        { word: 'Yacht', emoji: '🛥️' },
-        { word: 'Yak', emoji: '🐂' }
-      ]
-    },
-    'Z': { 
-      name: 'Letter Z', 
-      examples: [
-        { word: 'Zebra', emoji: '🦓' },
-        { word: 'Zoo', emoji: '🎪' },
-        { word: 'Zipper', emoji: '🤐' },
-        { word: 'Zero', emoji: '0️⃣' }
-      ]
-    }
-  }
-  
-  return letterData[letter] || { 
-    name: `Letter ${letter}`, 
-    examples: [{ word: letter, emoji: '❓' }] 
+  return LETTER_DATA[letter] || {
+    name: `Letter ${letter}`,
+    examples: [{ word: letter, emoji: '❓' }]
   }
 }
 
@@ -533,7 +296,7 @@ const getCurrentExampleForLetter = (letter) => {
   const letterData = getLetterData(letter)
   const examples = letterData.examples || []
   const clickCount = getLetterClickCount(letter)
-  
+
   // Use click count to determine which example to show (cycling through)
   const exampleIndex = Math.max(0, (clickCount - 1) % examples.length)
   return examples[exampleIndex] || examples[0] || { word: letter, emoji: '❓' }
@@ -543,17 +306,7 @@ const getCurrentExampleForLetter = (letter) => {
  * Get phonetic sound for a letter
  */
 const getPhoneticSound = (letter) => {
-  const phoneticSounds = {
-    'A': 'ah',           'B': 'buh',          'C': 'kuh',          'D': 'duh',
-    'E': 'eh',           'F': 'fuh',          'G': 'guh',          'H': 'huh',
-    'I': 'ih',           'J': 'juh',          'K': 'kuh',          'L': 'luh',
-    'M': 'muh',          'N': 'nuh',          'O': 'oh',           'P': 'puh',
-    'Q': 'kwuh',         'R': 'ruh',          'S': 'sss',          'T': 'tuh',
-    'U': 'uh',           'V': 'vuh',          'W': 'wuh',          'X': 'ks',
-    'Y': 'yuh',          'Z': 'zzz'
-  }
-  
-  return phoneticSounds[letter] || letter
+  return PHONETIC_SOUNDS[letter] || letter
 }
 
 /**

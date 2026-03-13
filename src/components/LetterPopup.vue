@@ -57,42 +57,27 @@ const showSuccessMessage = ref(false)
 const lastClickedWord = ref('')
 
 // Audio functions for kids-friendly interaction
-const playClickSound = () => {
-  // Create a simple click sound using Web Audio API
+const playTone = (frequency = 800, duration = 0.1, volume = 0.3) => {
   const audioContext = new (window.AudioContext || window.webkitAudioContext)()
   const oscillator = audioContext.createOscillator()
   const gainNode = audioContext.createGain()
-  
+
   oscillator.connect(gainNode)
   gainNode.connect(audioContext.destination)
-  
-  oscillator.frequency.value = 800
+
+  oscillator.frequency.value = frequency
   oscillator.type = 'sine'
-  
-  gainNode.gain.setValueAtTime(0.3, audioContext.currentTime)
-  gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1)
-  
+
+  gainNode.gain.setValueAtTime(volume, audioContext.currentTime)
+  gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration)
+
   oscillator.start(audioContext.currentTime)
-  oscillator.stop(audioContext.currentTime + 0.1)
+  oscillator.stop(audioContext.currentTime + duration)
 }
 
-const playHoverSound = () => {
-  const audioContext = new (window.AudioContext || window.webkitAudioContext)()
-  const oscillator = audioContext.createOscillator()
-  const gainNode = audioContext.createGain()
-  
-  oscillator.connect(gainNode)
-  gainNode.connect(audioContext.destination)
-  
-  oscillator.frequency.value = 600
-  oscillator.type = 'sine'
-  
-  gainNode.gain.setValueAtTime(0.1, audioContext.currentTime)
-  gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.05)
-  
-  oscillator.start(audioContext.currentTime)
-  oscillator.stop(audioContext.currentTime + 0.05)
-}
+const playClickSound = () => playTone(800, 0.1, 0.3)
+
+const playHoverSound = () => playTone(600, 0.05, 0.1)
 
 // Interactive handlers
 const handleSectionHover = (sectionName) => {
